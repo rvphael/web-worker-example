@@ -4,3 +4,5 @@ worker.onmessage = e => {
   const message = e.data;
   console.log(`[From Worker]: ${message}`);
 };
+
+worker.postMessage("Ping!");
