@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "browser-sync start --server --files 'index.html', 'src/*.js",
+    "dev": "browser-sync start --server --files 'index.html', 'src/*.js'",
     "test": "jest"
   },
   "keywords": [],
