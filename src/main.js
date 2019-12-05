@@ -1,10 +1,12 @@
-const worker = new Worker("../src/worker.js");
+const worker = new Worker("../src/worker.js", { type: "module" });
 
-worker.onmessage = e => {
+const workerOnMessage = worker.onmessage = e => {
   const message = e.data;
   console.log(`[From Worker]: ${message}`);
 
   return setTimeout(() => worker.postMessage("Ping"), 3000);
 };
 
-worker.postMessage("Ping!");
+const workerPostMessage = worker.postMessage("Ping!");
+
+export default { workerOnMessage, workerPostMessage };
